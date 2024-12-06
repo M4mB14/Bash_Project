@@ -1,0 +1,17 @@
+[Unit]
+Description=Monitor Test Process Service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/monitor_test.sh
+Restart=always
+RestartSec=10s
+StartLimitInterval=60s
+StartLimitBurst=5
+User=root
+Group=root
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
