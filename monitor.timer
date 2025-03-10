@@ -1,9 +1,10 @@
 [Unit]
-Description=Run Monitor Test Process every minute
+Description=Run monitoring script every minute
 
 [Timer]
-OnCalendar=*:0/1
-Persistent=true
+OnBootSec=1min
+OnUnitActiveSec=1min
+Unit=monitor.service
 
 [Install]
 WantedBy=timers.target
